@@ -8,14 +8,14 @@ export default class Hanged extends Component {
     constructor(props){
         super(props);
           
-          //let word = this.getGuessWord();
+          let word = this.getGuessWord();
 
         this.state = {
-            failures: 5,
+            failures: 0,
             // rightChoices: 0,
-            // guessWord: word,
+             guessWord: word,
             // //Desde aquí se pasa el argumento a la función para ejecutarla "word";
-            // wordGuessSoFar: this.initializaeWordGuessSoFar(word),
+             wordGuessSoFar: this.initializaeWordGuessSoFar(word),
             // keyboard: this.getKeyboard(),
             // modalVisible: false,
             // result:''
@@ -99,19 +99,19 @@ export default class Hanged extends Component {
   //   }
   // }
 
-  // getGuessWord= () => {
-  //     let words = ["ESDRUJULA","VELERO", "ACERTIJO", "SOMBRERO"];
-  //     return words[Math.floor(Math.random() * words.length)];
+  getGuessWord= () => {
+      let words = ["ESDRUJULA","VELERO", "ACERTIJO", "SOMBRERO"];
+      return words[Math.floor(Math.random() * words.length)];
 
-  // }
+  }
 
-  // initializaeWordGuessSoFar = (word) => {
-  //     let initializaeWord = " ";
-  //     for(let i=0; i < word.length; i++){
-  //         initializaeWord += "_"
-  //     }
-  //     return initializaeWord;
-  // }
+  initializaeWordGuessSoFar = (word) => {
+      let initializaeWord = " ";
+      for(let i=0; i < word.length; i++){
+          initializaeWord += "_"
+      }
+      return initializaeWord;
+  }
 
   // getModal=()=>{
   //   return(
@@ -134,6 +134,9 @@ export default class Hanged extends Component {
   
 
   render(){ 
+    console.log(this.state.failures)
+    console.log(this.state.guessWord)
+    console.log(this.state.wordGuessSoFar)
   return (
     
     <View style={styles.container}>
@@ -142,7 +145,7 @@ export default class Hanged extends Component {
           <Keac failures= {this.state.failures} />
       </View>
       <View style={styles.blankSpace}>
-         {/* <BlankSpace wordGuessSoFar = {this.state.wordGuessSoFar} />  */}
+         <BlankSpace wordGuessSoFar = {this.state.wordGuessSoFar} /> 
       </View>
       <View style={styles.keyboard}>
           {/* <Keyboard keyboard = {this.state.keyboard} */}

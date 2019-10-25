@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import Ahorcado from './Components/Ahorcado/Ahorcado'
+import Ahorcado from './Components/HangedGame/HangedGame.js'
 
 export default class App extends Component {
   render(){

@@ -1,23 +1,10 @@
-import React, {Component} from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import Ahorcado from './Components/HangedGame/HangedGame.js'
+import React, { Component } from 'react';
+import Hanged from './Components/HangedGame/HangedGame';
 
 export default class App extends Component {
-  render(){
-  return (
-    <Ahorcado/>
-    // <View style={styles.container}>
-    //   <Text>Karlita bb Game!!! Hola mundo!!!</Text>
-    // </View>
-  );
+  render() {
+    return (
+      <Hanged />
+    );
   }
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });

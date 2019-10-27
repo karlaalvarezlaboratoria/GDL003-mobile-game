@@ -1,41 +1,42 @@
-import React, {Component} from 'react';
-import { Platform, StyleSheet, Text, View, Image } from 'react-native';
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Image
+} from 'react-native';
 
 
-
-export default class Keac extends Component {
+export default class ImageGame extends Component {
   constructor(props){
-      super(props);
-  }  
-  render(){
-  return (
-    //<Text>Imagen</Text>
-    <Image style= {styles.image}
-           source= {IMAGES[this.props.failures.toString()]}/>
-  );
+    super(props);
+    
+  }
+  render() {
+    return (
+      <Image style={styles.image}
+             source={images[this.props.failures.toString()]} />
+    );
   }
 }
 
+const images = {
+    '5': require('../../img/0.png'),
+    '4': require('../../img/1.jpg'),
+    '3': require('../../img/2.png'),
+    '2': require('../../img/3.png'),
+    '1': require('../../img/4.png'),
+    '0': require('../../img/5.jpg'),   
+  };
+
 const styles = StyleSheet.create({
   image: {
-    backgroundColor: 'blue',
     flex: 1,
-    width: undefined,
-    height: undefined,
+    width: undefined, 
+    height: undefined, 
     resizeMode: 'contain',
     margin: 20,
     borderColor: 'red',
-    borderWidth: 1.
-  
+    borderWidth: 1,
+    backgroundColor: 'blue'
   }
 });
 
-const IMAGES = {
-    '0': require('../../img/5.jpg'),
-    '1': require('../../img/4.png'),
-    '2': require('../../img/3.png'),
-    '3': require('../../img/2.png'),
-    '4': require('../../img/1.jpg'),
-    '5': require('../../img/0.png')
-    
-};

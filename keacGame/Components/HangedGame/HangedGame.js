@@ -55,7 +55,7 @@ export default class Hanged extends Component {
     let keyboard = this.state.keyboard;
     let letter = keyboard[i].letter;
     let failures= this.state.failures;
-
+    if(keyboard[i].state === "not pressed"){
     if(this.correctChoice(letter)){
       keyboard[i].state = "right pressed";
       this.setState({
@@ -68,6 +68,7 @@ export default class Hanged extends Component {
         failures: ++failures
       });
     }
+  }
   };
 
   correctChoice= (letter)=>{

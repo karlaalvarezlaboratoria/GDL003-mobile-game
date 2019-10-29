@@ -13,7 +13,7 @@ export default class Keyboard extends Component {
     
   }
 
-  getKeyboard(){
+  getKeyboard=()=>{
     return this.props.keyboard.map(
       (letter, id) => 
         <TouchableHighlight onPress={() => this.props.pressedButton(id)}

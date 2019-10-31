@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Image
+  Image,
+  ImageBackground
 } from 'react-native';
 
 
@@ -12,23 +13,32 @@ export default class ImageGame extends Component {
   }
   render() {
     return (
-      <Image style={styles.image}
+      <ImageBackground style= {styles.backgroundImage} source={backgroundImages[this.props.failures.toString()]}>
+        <Image style={styles.image}
              source={images[this.props.failures.toString()]} />
+      </ImageBackground>
     );
   }
 }
-
+const backgroundImages ={
+  '0': require('../../img/arañitas5.png'),
+  '1': require('../../img/arañitas4.jpg'),
+  '2': require('../../img/arañitas3.png'),
+  '3': require('../../img/arañitas2.png'),
+  '4': require('../../img/arañitas1.png'),
+  '5': require('../../img/arañitas0.png')
+}
 const images = {
-    '5': require('../../img/0.png'),
-    '4': require('../../img/1.jpg'),
-    '3': require('../../img/2.png'),
-    '2': require('../../img/3.png'),
-    '1': require('../../img/4.png'),
-    '0': require('../../img/5.jpg'),   
+    '5': require('../../img/ranita.gif'),
+    '4': require('../../img/ranita.gif'),
+    '3': require('../../img/ranita.gif'),
+    '2': require('../../img/ranita.gif'),
+    '1': require('../../img/ranita2.gif'),
+    '0': require('../../img/ranita.gif'),   
   };
 
 const styles = StyleSheet.create({
-  image: {
+  backgroundImage:{
     flex: 1,
     width: undefined, 
     height: undefined, 
@@ -37,6 +47,18 @@ const styles = StyleSheet.create({
     borderColor: 'red',
     borderWidth: 1,
     backgroundColor: 'blue'
+  },
+
+  image: {
+    flex: 1,
+    width: undefined, 
+    height: undefined, 
+    resizeMode: 'contain',
+    margin: 20,
+    borderColor: 'red',
+    borderWidth: 1,
+    //backgroundColor: 'blue'
+    
   }
 });
 
